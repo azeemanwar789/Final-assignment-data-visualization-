@@ -46,9 +46,9 @@ app.layout = html.Div([
     html.Div(dcc.Dropdown(id='select-year', 
                    options=[{'label': i, 'value': i} for i in year_list],
                   placeholder='....',
-                  style={'Select statistics'}),
+                  style={'Select statistics'})),
     html.Div([#TASK 2.3: Add a division for output display
-    html.Div(id='output-container', className='chart-grid', style={'display':'flex'}),])
+    html.Div(id='output-container', className='chart-grid', style={'display':'flex'}),]),])
 
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
@@ -72,7 +72,6 @@ def update_output_container(selected_statistics, input_year):
     if selected_statistics == 'Recession Period Statistics':
         # Filter the data for recession periods
         recession_data = data[data['Recession'] == 1]
-        .......................
         #TASK 2.5: Create and display graphs for Recession Report Statistics
 
 #Plot 1 Automobile sales fluctuate over Recession Period (year wise) using line chart
@@ -84,23 +83,19 @@ def update_output_container(selected_statistics, input_year):
                 x='Year',
                 y='Automobile_sales',
                 title="recession report statistics"))
-..........
 #Plot 2 Calculate the average number of vehicles sold by vehicle type and represent as a Bar chart
 
-............
 # Plot 3 : Pie chart for total expenditure share by vehicle type during recessions
             # grouping data for plotting
-            exp_rec= recession_data.groupby('Vehicle_type')['Advertising_expenditure'].sum().reset_index()
-            R_chart3 = dcc.Graph(
+exp_rec= recession_data.groupby('Vehicle_type')['Advertising_expenditure'].sum().reset_index()
+R_chart3 = dcc.Graph(
                     figure=px.pie(exp_rec,
                     values='Advertising_expenditure',
                  names='Vehicle_type',
                  title="Expenditure share by vehicle type during recession"
                 )
         )
-..........
 # Plot 4 Develop a Bar chart for the effect of unemployment rate on vehicle type and sales
-............
 
 return [
             html.Div(className='chart-item', children=[html.Div(children=......),html.Div(children=......)]),
@@ -138,6 +133,3 @@ return [
             html.Div(className='chart-item', children=[html.Div(children=......),html.Div(children=......)],style={'display': 'flex'}),
             html.Div(className='chart-item', children=[html.Div(children=......),html.Div(children=......)],style={'display': '....'})
             ]
-
-
-
