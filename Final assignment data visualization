@@ -98,14 +98,14 @@ R_chart3 = dcc.Graph(
 # Plot 4 Develop a Bar chart for the effect of unemployment rate on vehicle type and sales
 
 return [
-            html.Div(className='chart-item', children=[html.Div(children=......),html.Div(children=......)]),
-            html.Div(className='chart-item', children=[html.Div(children=......),html.Div(children=......)])
+            html.Div(className='chart-item', children=[html.Div(children=plotly.express),html.Div(children=plotly.express)]),
+            html.Div(className='chart-item', children=[html.Div(children=plotly.express),html.Div(children=plotly.express)])
             ]
 
 # TASK 2.6: Create and display graphs for Yearly Report Statistics
  # Yearly Statistic Report Plots                             
-    elif (input_year and selected_statistics=='...............') :
-        yearly_data = data[data['Year'] == ......]
+elif (input_year and selected_statistics=='...............') :
+yearly_data = data[data['Year'] == ......]
                               
 ..........
 # Plot 1 :Yearly Automobile sales using line chart for the whole period.
